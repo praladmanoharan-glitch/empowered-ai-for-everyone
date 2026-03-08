@@ -1,0 +1,910 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Master the Skills for AI — Free On-Demand Courses | Trainocate Empowered</title>
+  <meta name="description"
+    content="Build your AI foundation on your own schedule. Free on-demand courses covering AI strategy, prompt engineering, and applied AI for every role — no prior experience needed." />
+
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts: Montserrat & Manrope -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,600&display=swap"
+    rel="stylesheet" />
+
+  <!-- Vidyard Embed Script -->
+  <script type="text/javascript" async src="https://play.vidyard.com/embed/v4.js"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { montserrat: ['Montserrat', 'sans-serif'] },
+          colors: {
+            brand: { DEFAULT: '#FA4515', dark: '#E03F12' },
+            ink: { DEFAULT: '#000000', 900: '#000000', 800: '#000000', 700: '#000000', 600: '#000000', 500: '#000000' },
+            steel: { DEFAULT: '#8B95B0', light: '#C4CBDE', muted: '#5A6280' },
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    * {
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Foggy gradient mask on card image */
+    .foggy-mask {
+      -webkit-mask-image: linear-gradient(to bottom, black 40%, transparent 95%);
+      mask-image: linear-gradient(to bottom, black 40%, transparent 95%);
+      font-family: 'Manrope', sans-serif;
+    }
+
+    /* Card light bg */
+    .rectangle-10-bg {
+      background: linear-gradient(155deg, #f8f9fa 0%, #ffffff 45%, #fff9f7 100%);
+      position: relative;
+      z-index: 1;
+    }
+
+    .rectangle-10-bg::before {
+      content: none;
+    }
+
+    /* Card hover lift */
+    .card-lift {
+      transition: transform .28s ease, box-shadow .28s ease;
+    }
+
+    .card-lift:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 28px 56px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Hero dark bg - plain black */
+    .hero-bg {
+      background-color: #000000;
+    }
+
+    /* Dark section bg - plain black */
+    .section-dark {
+      background-color: #000000;
+    }
+
+    /* Grid overlay - removed */
+    .grid-overlay {
+      background-image: none;
+      background-size: none;
+    }
+
+    /* Glow dot pulse */
+    @keyframes glow-pulse {
+      0%, 100% {
+        opacity: 1;
+        box-shadow: 0 0 0 0 rgba(250, 69, 21, 0.4);
+      }
+      50% {
+        opacity: 0.75;
+        box-shadow: 0 0 0 6px rgba(250, 69, 21, 0);
+      }
+    }
+
+    .glow-dot {
+      animation: glow-pulse 2.8s ease-in-out infinite;
+    }
+
+    /* Orange underline accent */
+    .brand-underline {
+      text-decoration: none;
+      background-image: linear-gradient(#FA4515, #FA4515);
+      background-repeat: no-repeat;
+      background-size: 100% 3px;
+      background-position: 0 100%;
+    }
+
+    /* Divider line */
+    .divider {
+      border-color: rgba(255, 255, 255, 0.07);
+    }
+
+    /* Step number ring */
+    .step-ring {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      border: 2px solid rgba(250, 69, 21, 0.5);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 15px;
+      font-weight: 800;
+      color: #FA4515;
+      flex-shrink: 0;
+    }
+
+    /* FAQ chevron */
+    details summary {
+      list-style: none;
+      cursor: pointer;
+    }
+
+    details summary::-webkit-details-marker {
+      display: none;
+    }
+
+    details[open] .chevron {
+      transform: rotate(180deg);
+    }
+
+    .chevron {
+      transition: transform .25s ease;
+    }
+
+    /* Benefit card */
+    .benefit-card {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid rgba(255, 255, 255, 0.07);
+      border-radius: 16px;
+      padding: 28px;
+      transition: background .25s ease, border-color .25s ease;
+    }
+
+    .benefit-card:hover {
+      background: rgba(255, 255, 255, 0.07);
+      border-color: rgba(250, 69, 21, 0.25);
+    }
+
+    /* Stat block */
+    .stat-sep {
+      border-color: rgba(255, 255, 255, 0.1);
+    }
+  </style>
+</head>
+
+<body class="bg-black text-white antialiased">
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════════════ -->
+  <section class="hero-bg relative overflow-hidden pt-[72px] pb-[96px] px-6">
+
+    <div class="max-w-6xl mx-auto">
+
+      <!-- Brand mark -->
+      <div class="mb-10 flex justify-center items-center gap-3 w-full">
+        <img
+          src="https://marketing.trainocate.com/empowered/wp-content/uploads/sites/2/2026/01/Rev_Empowered-Logo-white-2048x948.png"
+          alt="Trainocate Empowered" class="h-16 md:h-24 object-contain mx-auto" />
+      </div>
+
+      <div class="flex flex-col gap-14 items-center w-full">
+
+        <!-- Copy -->
+        <div class="text-center w-full">
+          <!-- Eyebrow -->
+          <div
+            class="inline-flex items-center gap-2.5 bg-[#FA4515]/10 border border-[#FA4515]/25 rounded-full px-4 py-1.5 mb-7">
+            <span class="w-2 h-2 bg-[#FA4515] rounded-full glow-dot"></span>
+            <span class="text-[#FA4515] text-[11px] font-bold uppercase tracking-[0.14em]">Free On-Demand
+              Learning</span>
+          </div>
+
+          <h1 class="text-white text-[40px] lg:text-[52px] font-extrabold leading-[1.08] tracking-[-1.8px] mb-6">
+            Master the Skills for AI.<br />
+            <span class="brand-underline">Learn at Your Own Pace.</span><br />
+            <span class="text-white/80">Completely Free.</span>
+          </h1>
+
+          <p class="text-white/80 text-[17px] leading-[1.7] mb-9 max-w-[650px] mx-auto">
+            Tired of scheduled training? Our free, on-demand video courses empower you to build real AI skills
+            on your own schedule. From prompt engineering to AI strategy and applied tools for your role,
+            gain practical expertise that makes an immediate impact — no prior experience needed.
+          </p>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row gap-4 mb-8 justify-center items-center">
+            <a href="https://marketing.trainocate.com/empowered/register/" target="_blank"
+              class="bg-[#FA4515] hover:bg-brand-dark text-white font-extrabold text-[15px] px-8 py-4 rounded-[10px] shadow-[0_8px_32px_rgba(250,69,21,0.35)] hover:shadow-[0_12px_40px_rgba(250,69,21,0.5)] transition-all uppercase tracking-wide text-center">
+              Start Learning Free
+            </a>
+            <a href="#courses"
+              class="bg-white/6 hover:bg-white/10 border border-white/12 text-white font-semibold text-[15px] px-8 py-4 rounded-[10px] transition-all text-center">
+              Explore the AI Pathway
+            </a>
+          </div>
+
+          <!-- Access link -->
+          <p class="text-center mb-12">
+            <a href="https://marketing.trainocate.com/empowered/" target="_blank"
+              class="inline-flex items-center gap-2 text-[#FA4515] hover:text-white text-[14px] font-semibold transition-colors border-b border-[#FA4515]/30 hover:border-white/50 pb-0.5">
+              Access this and more courses for free
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                <path d="M5 12h14M12 5l7 7-7 7" />
+              </svg>
+            </a>
+          </p>
+
+          <!-- Vendor Logo -->
+          <div class="mt-12 flex flex-col justify-center items-center w-full">
+            <p class="text-white/80 text-[14px] font-medium mb-3">Powered by:</p>
+            <div class="flex items-center gap-6 mb-2">
+              <img decoding="async"
+                src="https://marketing.trainocate.com/empowered/wp-content/uploads/sites/2/2025/12/EVL_Microsoft-e1765774602426.png"
+                alt="Microsoft" class="h-24 md:h-32 object-contain">
+              <div class="h-16 w-px bg-white/20"></div>
+              <img decoding="async"
+                src="https://marketing.trainocate.com/empowered/wp-content/uploads/sites/2/2026/01/Rev_Empowered-Logo-white-2048x948.png"
+                alt="Trainocate Empowered" class="h-12 md:h-16 object-contain">
+            </div>
+            <p class="text-white/80 text-[12px] md:text-[14px] font-medium mt-1">AI Skills Curriculum by Trainocate</p>
+          </div>
+        </div>
+
+        <!-- Featured Video Embed -->
+        <div class="flex justify-center w-full">
+          <div class="relative w-full max-w-[500px]">
+            <!-- Glow ring -->
+            <div class="absolute inset-[-20px] bg-[#FA4515] rounded-[40px] opacity-[0.12] blur-[32px]"></div>
+
+            <div
+              class="relative w-full rounded-[20px] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.6)] bg-[#1e1e1e]">
+              <!-- Vidyard Embed -->
+              <img style="width: 100%; margin: auto; display: block;" class="vidyard-player-embed"
+                src="https://play.vidyard.com/HYxVpKmo1mC9jfomcrxyib.jpg" data-uuid="HYxVpKmo1mC9jfomcrxyib" data-v="4"
+                data-type="inline" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     TRUST BAR
+═══════════════════════════════════════════════════════════ -->
+  <div class="bg-black border-y border-white/6 py-5 px-6">
+    <div
+      class="max-w-5xl mx-auto flex flex-wrap items-center justify-center gap-x-10 gap-y-3 text-[12px] font-semibold text-[#5A6280]">
+      <span class="flex items-center gap-2">
+        <svg width="14" height="14" fill="#FA4515" viewBox="0 0 16 16">
+          <path
+            d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+        </svg>
+        No credit card required
+      </span>
+      <span class="flex items-center gap-2">
+        <svg width="14" height="14" fill="#FA4515" viewBox="0 0 16 16">
+          <path
+            d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+        </svg>
+        Instant access on registration
+      </span>
+      <span class="flex items-center gap-2">
+        <svg width="14" height="14" fill="#FA4515" viewBox="0 0 16 16">
+          <path
+            d="M10.067.87a2.89 2.89 0 0 0-4.134 0l-.622.638-.89-.011a2.89 2.89 0 0 0-2.924 2.924l.01.89-.636.622a2.89 2.89 0 0 0 0 4.134l.637.622-.011.89a2.89 2.89 0 0 0 2.924 2.924l.89-.01.622.636a2.89 2.89 0 0 0 4.134 0l.622-.637.89.011a2.89 2.89 0 0 0 2.924-2.924l-.01-.89.636-.622a2.89 2.89 0 0 0 0-4.134l-.637-.622.011-.89a2.89 2.89 0 0 0-2.924-2.924l-.89.01zm.287 5.984-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L7 8.793l2.646-2.647a.5.5 0 0 1 .708.708" />
+        </svg>
+        Learn on your own schedule
+      </span>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     PROBLEM SECTION
+═══════════════════════════════════════════════════════════ -->
+  <section class="section-dark py-24 px-6">
+    <div class="max-w-3xl mx-auto text-center">
+
+      <p class="text-[#FA4515] text-[11px] font-bold uppercase tracking-[0.18em] mb-4">The Challenge</p>
+      <h2 class="text-white text-[32px] lg:text-[40px] font-extrabold leading-[1.12] tracking-[-1.2px] mb-6">
+        AI is reshaping every role. Are you ready?
+      </h2>
+      <p class="text-[#8B95B0] text-[17px] leading-[1.7] mb-16">
+        AI tools are advancing rapidly, but most professionals haven't had the time or resources to build real skills.
+        Traditional training options are either too expensive, too rigid, or too generic to deliver immediate value
+        in your day-to-day work.
+      </p>
+
+      <!-- Problem cards -->
+      <div class="grid sm:grid-cols-3 gap-5 text-left">
+        <div class="benefit-card">
+          <div class="w-10 h-10 rounded-[10px] bg-[#FA4515]/12 flex items-center justify-center mb-4">
+            <svg width="18" height="18" fill="none" stroke="#FA4515" stroke-width="2" viewBox="0 0 24 24">
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v6l4 2" />
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-[17px] mb-2">No Time for Training</h3>
+          <p class="text-[#8B95B0] text-[15px] leading-[1.65]">Full-day workshops and rigid schedules don't fit busy
+            professionals. You need learning that adapts to your calendar, not the other way around.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="w-10 h-10 rounded-[10px] bg-[#FA4515]/12 flex items-center justify-center mb-4">
+            <svg width="18" height="18" fill="none" stroke="#FA4515" stroke-width="2" viewBox="0 0 24 24">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-[17px] mb-2">One-Size-Fits-All Content</h3>
+          <p class="text-[#8B95B0] text-[15px] leading-[1.65]">Generic AI overviews miss the mark. Whether you're a
+            leader, engineer, or end user, you need content tailored to your actual role and goals.</p>
+        </div>
+        <div class="benefit-card">
+          <div class="w-10 h-10 rounded-[10px] bg-[#FA4515]/12 flex items-center justify-center mb-4">
+            <svg width="18" height="18" fill="none" stroke="#FA4515" stroke-width="2" viewBox="0 0 24 24">
+              <line x1="12" y1="1" x2="12" y2="23" />
+              <path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6" />
+            </svg>
+          </div>
+          <h3 class="text-white font-bold text-[17px] mb-2">High Cost, Low Access</h3>
+          <p class="text-[#8B95B0] text-[15px] leading-[1.65]">Quality AI training often comes with a premium price tag.
+            The skills gap widens when access is limited by budget, not ability.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     HOW IT WORKS
+═══════════════════════════════════════════════════════════ -->
+  <section class="py-20 px-6 bg-black border-t border-white/6">
+    <div class="max-w-3xl mx-auto">
+
+      <div class="text-center mb-14">
+        <p class="text-[#FA4515] text-[11px] font-bold uppercase tracking-[0.18em] mb-4">Your Solution</p>
+        <h2 class="text-white text-[32px] lg:text-[38px] font-extrabold leading-[1.12] tracking-[-1.2px]">
+          Empowered Learning: Your Path to AI Mastery
+        </h2>
+      </div>
+
+      <div class="flex flex-col gap-8">
+
+        <div class="flex items-start gap-5">
+          <div class="step-ring">1</div>
+          <div class="pt-1">
+            <h3 class="text-white font-bold text-[18px] mb-1.5">Quick & Easy Registration</h3>
+            <p class="text-[#8B95B0] text-[16px] leading-[1.65]">Sign up for your free Empowered account in
+              seconds. No credit card, no hidden fees, and lifetime access to the full library.</p>
+          </div>
+        </div>
+
+        <div class="w-px h-8 bg-white/8 ml-5"></div>
+
+        <div class="flex items-start gap-5">
+          <div class="step-ring">2</div>
+          <div class="pt-1">
+            <h3 class="text-white font-bold text-[18px] mb-1.5">Choose Your Learning Path</h3>
+            <p class="text-[#8B95B0] text-[16px] leading-[1.65]">Pick the course that matches your role and
+              goals — from prompt engineering to AI strategy to hands-on tools. Start exactly where you need to.</p>
+          </div>
+        </div>
+
+        <div class="w-px h-8 bg-white/8 ml-5"></div>
+
+        <div class="flex items-start gap-5">
+          <div class="step-ring">3</div>
+          <div class="pt-1">
+            <h3 class="text-white font-bold text-[18px] mb-1.5">Learn On Your Schedule</h3>
+            <p class="text-[#8B95B0] text-[16px] leading-[1.65]">Our on-demand video library is available
+              24/7. Pause, rewind, and re-watch as many times as you need, on any device, at any time.</p>
+          </div>
+        </div>
+
+        <div class="w-px h-8 bg-white/8 ml-5"></div>
+
+        <div class="flex items-start gap-5">
+          <div class="step-ring">4</div>
+          <div class="pt-1">
+            <h3 class="text-white font-bold text-[18px] mb-1.5">Apply Instantly, See Results</h3>
+            <p class="text-[#8B95B0] text-[16px] leading-[1.65]">Every module is built for immediate application.
+              Walk away from each lesson with skills you can put to work in your very next task.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     COURSES
+═══════════════════════════════════════════════════════════ -->
+  <section id="courses" class="section-dark py-24 px-6 border-t border-white/6">
+    <div class="max-w-6xl mx-auto">
+
+      <div class="text-center mb-14">
+        <p class="text-[#FA4515] text-[11px] font-bold uppercase tracking-[0.18em] mb-4">Our Courses</p>
+        <h2 class="text-white text-[32px] lg:text-[40px] font-extrabold leading-[1.12] tracking-[-1.2px] mb-4">
+          Discover Your Path to AI Expertise
+        </h2>
+        <p class="text-[#8B95B0] text-[16px] max-w-xl mx-auto leading-[1.65]">
+          Explore our curated AI curriculum designed for every role. Each course is self-contained,
+          on-demand, and completely free — start with the one that fits you best.
+        </p>
+      </div>
+
+      <!-- Course cards — row 1: 3 cards -->
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 justify-items-center mb-6">
+
+        <!-- Card 1: Mastering AI & M365 — featured -->
+        <div
+          class="card-lift rectangle-10-bg relative w-full max-w-[400px] min-h-[380px] rounded-[20px] border border-white/40 shadow-[0_15px_50px_rgba(0,0,0,0.5)] font-montserrat flex flex-col pt-[215px]">
+          <!-- Most Popular badge -->
+          <div
+            class="absolute top-[-10px] left-[16px] z-30 bg-[#FA4515] text-white text-[10px] font-extrabold uppercase tracking-[0.1em] px-3 py-1 rounded-full shadow-[0_4px_12px_rgba(250,69,21,0.4)]">
+            Most Popular
+          </div>
+          <div
+            class="absolute top-[3px] left-[3px] right-[3px] h-[215px] border-[5px] border-white rounded-[20px] overflow-hidden z-10 foggy-mask">
+            <img
+              src="https://marketing.trainocate.com/empowered/wp-content/uploads/sites/2/2025/07/Thumbnail1-1-1024x1024.png"
+              alt="Mastering AI and Microsoft 365: Copilot, Teams and Power Platform"
+              class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="absolute bottom-[18px] inset-x-0 px-[20px] z-20 flex flex-col">
+            <h3 class="text-black font-extrabold text-[20px] leading-[1.15] mb-[12px] tracking-[-0.6px] line-clamp-2">
+              Mastering AI &amp; Microsoft 365: Copilot, Teams and Power Platform
+            </h3>
+            <div
+              class="bg-white rounded-[11px] h-[48px] flex items-center px-2 mb-[12px] border border-[#f0f0f0] shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
+              <div class="flex flex-1 items-center justify-center gap-2 min-w-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
+                  <path
+                    d="M2 1.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1-.5-.5m2.5.5v1a3.5 3.5 0 0 0 1.989 3.158c.533.256 1.011.791 1.011 1.491v.702s.18.149.5.149.5-.15.5-.15v-.7c0-.701.478-1.236 1.011-1.492A3.5 3.5 0 0 0 11.5 3V2z" />
+                </svg>
+                <span class="font-bold text-[13px] text-black truncate">4h 33m</span>
+              </div>
+              <div class="h-[26px] border-l border-black mx-1"></div>
+              <div class="flex flex-1 items-center justify-center gap-2 min-w-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
+                  <path
+                    d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z" />
+                  <path
+                    d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31" />
+                </svg>
+                <span class="font-bold text-[13px] text-black truncate">English</span>
+              </div>
+            </div>
+            <a href="https://marketing.trainocate.com/empowered/playlist/mastering-ai-microsoft-365/" target="_blank"
+              class="w-full h-[34px] bg-[#FA4515] text-white rounded-[6px] flex items-center justify-center text-[15px] font-bold uppercase hover:opacity-90 transition shadow-[0_4px_12px_rgba(255,69,29,0.2)]">
+              Start Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 2: AI for Prompt Engineering -->
+        <div
+          class="card-lift rectangle-10-bg relative w-full max-w-[400px] min-h-[380px] rounded-[20px] border border-white/40 shadow-[0_15px_50px_rgba(0,0,0,0.5)] font-montserrat flex flex-col pt-[215px]">
+          <div
+            class="absolute top-[3px] left-[3px] right-[3px] h-[215px] border-[5px] border-white rounded-[20px] overflow-hidden z-10 foggy-mask">
+            <img src="https://marketing.trainocate.com/empowered/wp-content/uploads/sites/2/2025/10/7-1.png"
+              alt="AI for Prompt Engineering for Executives and End Users" class="w-full h-full object-cover"
+              loading="lazy">
+          </div>
+          <div class="absolute bottom-[18px] inset-x-0 px-[20px] z-20 flex flex-col">
+            <h3 class="text-black font-extrabold text-[20px] leading-[1.15] mb-[12px] tracking-[-0.6px] line-clamp-2">
+              AI for Prompt Engineering for Executives &amp; End Users
+            </h3>
+            <div
+              class="bg-white rounded-[11px] h-[48px] flex items-center px-2 mb-[12px] border border-[#f0f0f0] shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
+              <div class="flex flex-1 items-center justify-center gap-2 min-w-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
+                  <path
+                    d="M2 1.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1-.5-.5m2.5.5v1a3.5 3.5 0 0 0 1.989 3.158c.533.256 1.011.791 1.011 1.491v.702s.18.149.5.149.5-.15.5-.15v-.7c0-.701.478-1.236 1.011-1.492A3.5 3.5 0 0 0 11.5 3V2z" />
+                </svg>
+                <span class="font-bold text-[13px] text-black truncate">1h 48m</span>
+              </div>
+              <div class="h-[26px] border-l border-black mx-1"></div>
+              <div class="flex flex-1 items-center justify-center gap-2 min-w-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
+                  <path
+                    d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z" />
+                  <path
+                    d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31" />
+                </svg>
+                <span class="font-bold text-[13px] text-black truncate">English</span>
+              </div>
+            </div>
+            <a href="https://marketing.trainocate.com/empowered/playlist/ai-for-prompt-engineering-for-executives-end-users/"
+              target="_blank"
+              class="w-full h-[34px] bg-[#FA4515] text-white rounded-[6px] flex items-center justify-center text-[15px] font-bold uppercase hover:opacity-90 transition shadow-[0_4px_12px_rgba(255,69,29,0.2)]">
+              Start Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 3: trAInocate AI For Business Enablement & Leadership -->
+        <div
+          class="card-lift rectangle-10-bg relative w-full max-w-[400px] min-h-[380px] rounded-[20px] border border-white/40 shadow-[0_15px_50px_rgba(0,0,0,0.5)] font-montserrat flex flex-col pt-[215px]">
+          <div
+            class="absolute top-[3px] left-[3px] right-[3px] h-[215px] border-[5px] border-white rounded-[20px] overflow-hidden z-10 foggy-mask">
+            <img src="https://marketing.trainocate.com/empowered/wp-content/uploads/sites/2/2025/10/4-1.png"
+              alt="trAInocate AI For Business Enablement and Leadership" class="w-full h-full object-cover"
+              loading="lazy">
+          </div>
+          <div class="absolute bottom-[18px] inset-x-0 px-[20px] z-20 flex flex-col">
+            <h3 class="text-black font-extrabold text-[20px] leading-[1.15] mb-[12px] tracking-[-0.6px] line-clamp-2">
+              trAInocate AI For Business Enablement &amp; Leadership
+            </h3>
+            <div
+              class="bg-white rounded-[11px] h-[48px] flex items-center px-2 mb-[12px] border border-[#f0f0f0] shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
+              <div class="flex flex-1 items-center justify-center gap-2 min-w-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
+                  <path
+                    d="M2 1.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1-.5-.5m2.5.5v1a3.5 3.5 0 0 0 1.989 3.158c.533.256 1.011.791 1.011 1.491v.702s.18.149.5.149.5-.15.5-.15v-.7c0-.701.478-1.236 1.011-1.492A3.5 3.5 0 0 0 11.5 3V2z" />
+                </svg>
+                <span class="font-bold text-[13px] text-black truncate">0h 58m</span>
+              </div>
+              <div class="h-[26px] border-l border-black mx-1"></div>
+              <div class="flex flex-1 items-center justify-center gap-2 min-w-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
+                  <path
+                    d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z" />
+                  <path
+                    d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31" />
+                </svg>
+                <span class="font-bold text-[13px] text-black truncate">English</span>
+              </div>
+            </div>
+            <a href="https://marketing.trainocate.com/empowered/playlist/trainocate-ai-for-business-enablement-leadership/"
+              target="_blank"
+              class="w-full h-[34px] bg-[#FA4515] text-white rounded-[6px] flex items-center justify-center text-[15px] font-bold uppercase hover:opacity-90 transition shadow-[0_4px_12px_rgba(255,69,29,0.2)]">
+              Start Now
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Course cards — row 2: 2 cards, centered -->
+      <div class="grid sm:grid-cols-2 gap-6 justify-items-center max-w-[860px] mx-auto">
+
+        <!-- Card 4: trAInocate AI For AI Engineers -->
+        <div
+          class="card-lift rectangle-10-bg relative w-full max-w-[400px] min-h-[380px] rounded-[20px] border border-white/40 shadow-[0_15px_50px_rgba(0,0,0,0.5)] font-montserrat flex flex-col pt-[215px]">
+          <div
+            class="absolute top-[3px] left-[3px] right-[3px] h-[215px] border-[5px] border-white rounded-[20px] overflow-hidden z-10 foggy-mask">
+            <img src="https://marketing.trainocate.com/empowered/wp-content/uploads/sites/2/2025/10/3-2.png"
+              alt="trAInocate AI For AI Engineers" class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="absolute bottom-[18px] inset-x-0 px-[20px] z-20 flex flex-col">
+            <h3 class="text-black font-extrabold text-[20px] leading-[1.15] mb-[12px] tracking-[-0.6px] line-clamp-2">
+              trAInocate AI For AI Engineers
+            </h3>
+            <div
+              class="bg-white rounded-[11px] h-[48px] flex items-center px-2 mb-[12px] border border-[#f0f0f0] shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
+              <div class="flex flex-1 items-center justify-center gap-2 min-w-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
+                  <path
+                    d="M2 1.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1-.5-.5m2.5.5v1a3.5 3.5 0 0 0 1.989 3.158c.533.256 1.011.791 1.011 1.491v.702s.18.149.5.149.5-.15.5-.15v-.7c0-.701.478-1.236 1.011-1.492A3.5 3.5 0 0 0 11.5 3V2z" />
+                </svg>
+                <span class="font-bold text-[13px] text-black truncate">0h 41m</span>
+              </div>
+              <div class="h-[26px] border-l border-black mx-1"></div>
+              <div class="flex flex-1 items-center justify-center gap-2 min-w-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
+                  <path
+                    d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z" />
+                  <path
+                    d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31" />
+                </svg>
+                <span class="font-bold text-[13px] text-black truncate">English</span>
+              </div>
+            </div>
+            <a href="https://marketing.trainocate.com/empowered/playlist/trainocate-ai-for-ai-engineers/" target="_blank"
+              class="w-full h-[34px] bg-[#FA4515] text-white rounded-[6px] flex items-center justify-center text-[15px] font-bold uppercase hover:opacity-90 transition shadow-[0_4px_12px_rgba(255,69,29,0.2)]">
+              Start Now
+            </a>
+          </div>
+        </div>
+
+        <!-- Card 5: AI & Copilot for Business Leaders -->
+        <div
+          class="card-lift rectangle-10-bg relative w-full max-w-[400px] min-h-[380px] rounded-[20px] border border-white/40 shadow-[0_15px_50px_rgba(0,0,0,0.5)] font-montserrat flex flex-col pt-[215px]">
+          <div
+            class="absolute top-[3px] left-[3px] right-[3px] h-[215px] border-[5px] border-white rounded-[20px] overflow-hidden z-10 foggy-mask">
+            <img src="https://marketing.trainocate.com/empowered/wp-content/uploads/sites/2/2025/10/8.png"
+              alt="AI and Copilot for Business Leaders: Transform Your Business with Microsoft AI"
+              class="w-full h-full object-cover" loading="lazy">
+          </div>
+          <div class="absolute bottom-[18px] inset-x-0 px-[20px] z-20 flex flex-col">
+            <h3 class="text-black font-extrabold text-[20px] leading-[1.15] mb-[12px] tracking-[-0.6px] line-clamp-2">
+              AI &amp; Copilot for Business Leaders: Transform Your Business with Microsoft AI
+            </h3>
+            <div
+              class="bg-white rounded-[11px] h-[48px] flex items-center px-2 mb-[12px] border border-[#f0f0f0] shadow-[0_2px_10px_rgba(0,0,0,0.03)]">
+              <div class="flex flex-1 items-center justify-center gap-2 min-w-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
+                  <path
+                    d="M2 1.5a.5.5 0 0 1 .5-.5h11a.5.5 0 0 1 0 1h-1v1a4.5 4.5 0 0 1-2.557 4.06c-.29.139-.443.377-.443.59v.7c0 .213.154.451.443.59A4.5 4.5 0 0 1 12.5 13v1h1a.5.5 0 0 1 0 1h-11a.5.5 0 1 1 0-1h1v-1a4.5 4.5 0 0 1 2.557-4.06c.29-.139.443-.377.443-.59v-.7c0-.213-.154-.451-.443-.59A4.5 4.5 0 0 1 3.5 3V2h-1a.5.5 0 0 1-.5-.5m2.5.5v1a3.5 3.5 0 0 0 1.989 3.158c.533.256 1.011.791 1.011 1.491v.702s.18.149.5.149.5-.15.5-.15v-.7c0-.701.478-1.236 1.011-1.492A3.5 3.5 0 0 0 11.5 3V2z" />
+                </svg>
+                <span class="font-bold text-[13px] text-black truncate">0h 43m</span>
+              </div>
+              <div class="h-[26px] border-l border-black mx-1"></div>
+              <div class="flex flex-1 items-center justify-center gap-2 min-w-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="black" viewBox="0 0 16 16">
+                  <path
+                    d="M4.545 6.714 4.11 8H3l1.862-5h1.284L8 8H6.833l-.435-1.286zm1.634-.736L5.5 3.956h-.049l-.679 2.022z" />
+                  <path
+                    d="M0 2a2 2 0 0 1 2-2h7a2 2 0 0 1 2 2v3h3a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-3H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v7a1 1 0 0 0 1 1h7a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zm7.138 9.995q.289.451.63.846c-.748.575-1.673 1.001-2.768 1.292.178.217.451.635.555.867 1.125-.359 2.08-.844 2.886-1.494.777.665 1.739 1.165 2.93 1.472.133-.254.414-.673.629-.89-1.125-.253-2.057-.694-2.82-1.284.681-.747 1.222-1.651 1.621-2.757H14V8h-3v1.047h.765c-.318.844-.74 1.546-1.272 2.13a6 6 0 0 1-.415-.492 2 2 0 0 1-.94.31" />
+                </svg>
+                <span class="font-bold text-[13px] text-black truncate">English</span>
+              </div>
+            </div>
+            <a href="https://marketing.trainocate.com/empowered/playlist/ai-copilot-for-business-leaders-transform-your-business-with-microsoft-ai/"
+              target="_blank"
+              class="w-full h-[34px] bg-[#FA4515] text-white rounded-[6px] flex items-center justify-center text-[15px] font-bold uppercase hover:opacity-90 transition shadow-[0_4px_12px_rgba(255,69,29,0.2)]">
+              Start Now
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- View all CTA -->
+      <div class="text-center mt-12">
+        <a href="https://marketing.trainocate.com/empowered/" target="_blank"
+          class="inline-flex items-center gap-2 text-[#8B95B0] hover:text-white text-[14px] font-semibold transition-colors border-b border-white/10 hover:border-white/30 pb-0.5">
+          Explore the Full Course Library
+          <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     WHY ON-DEMAND
+═══════════════════════════════════════════════════════════ -->
+  <section id="benefits" class="py-24 px-6 bg-black border-t border-white/6">
+    <div class="max-w-5xl mx-auto">
+
+      <div class="grid lg:grid-cols-2 gap-16 items-start">
+
+        <!-- Left -->
+        <div>
+          <p class="text-[#FA4515] text-[11px] font-bold uppercase tracking-[0.18em] mb-4">Why Empowered?</p>
+          <h2 class="text-white text-[30px] lg:text-[36px] font-extrabold leading-[1.15] tracking-[-1px] mb-6">
+            Flexible Learning, Real-World Impact
+          </h2>
+          <p class="text-[#8B95B0] text-[16px] leading-[1.7] mb-8">
+            Traditional AI training often doesn't keep pace with how fast things are moving. Empowered delivers
+            a superior on-demand learning experience built for immediate relevance — so you can apply what you
+            learn in your very next meeting, project, or workflow.
+          </p>
+          <a href="https://marketing.trainocate.com/empowered/register/" target="_blank"
+            class="inline-flex items-center gap-2 bg-[#FA4515] hover:bg-brand-dark text-white font-extrabold text-[14px] px-7 py-3.5 rounded-[9px] shadow-[0_6px_24px_rgba(250,69,21,0.3)] hover:shadow-[0_10px_32px_rgba(250,69,21,0.45)] transition-all uppercase tracking-wide">
+            Start Your Free Journey
+            <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+              <path d="M5 12h14M12 5l7 7-7 7" />
+            </svg>
+          </a>
+        </div>
+
+        <!-- Right: benefit cards -->
+        <div class="grid gap-4">
+          <div class="benefit-card">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-9 h-9 rounded-[9px] bg-[#FA4515]/12 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="16" height="16" fill="none" stroke="#FA4515" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z" />
+                  <path d="M12 6v6l4 2" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-[17px] mb-1">Bite-Sized Learning</h3>
+                <p class="text-[#8B95B0] text-[15px] leading-[1.6]">Modules are concise (5–25 minutes), designed
+                  to fit into short breaks, commutes, and busy workdays without disruption.</p>
+              </div>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-9 h-9 rounded-[9px] bg-[#FA4515]/12 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="16" height="16" fill="none" stroke="#FA4515" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                  <polyline points="22,6 12,13 2,6" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-[17px] mb-1">Unlimited Access</h3>
+                <p class="text-[#8B95B0] text-[15px] leading-[1.6]">Register once and unlock lifetime access to
+                  the entire AI curriculum — plus new content as it's added to the library.</p>
+              </div>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-9 h-9 rounded-[9px] bg-[#FA4515]/12 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="16" height="16" fill="none" stroke="#FA4515" stroke-width="2" viewBox="0 0 24 24">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 8v4l3 3" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-[17px] mb-1">Role-Specific Content</h3>
+                <p class="text-[#8B95B0] text-[15px] leading-[1.6]">Whether you're a leader, engineer, or
+                  everyday professional, there's a course that speaks directly to your role and responsibilities.</p>
+              </div>
+            </div>
+          </div>
+          <div class="benefit-card">
+            <div class="flex items-start gap-4">
+              <div
+                class="w-9 h-9 rounded-[9px] bg-[#FA4515]/12 flex items-center justify-center flex-shrink-0 mt-0.5">
+                <svg width="16" height="16" fill="none" stroke="#FA4515" stroke-width="2" viewBox="0 0 24 24">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg>
+              </div>
+              <div>
+                <h3 class="text-white font-bold text-[17px] mb-1">Trusted Experts</h3>
+                <p class="text-[#8B95B0] text-[15px] leading-[1.6]">Built by Trainocate — a Microsoft Gold
+                  Partner with 30+ years of industry-leading technology training across Southeast Asia.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     FAQ
+═══════════════════════════════════════════════════════════ -->
+  <section id="faq" class="section-dark py-24 px-6 border-t border-white/6">
+    <div class="max-w-2xl mx-auto">
+
+      <div class="text-center mb-14">
+        <p class="text-[#FA4515] text-[11px] font-bold uppercase tracking-[0.18em] mb-4">FAQ</p>
+        <h2 class="text-white text-[30px] font-extrabold leading-[1.12] tracking-[-1px]">Your Questions,
+          Answered</h2>
+      </div>
+
+      <div class="flex flex-col divide-y divide-white/7">
+
+        <details class="py-5 group">
+          <summary class="flex items-center justify-between gap-4 text-white font-semibold text-[15px] cursor-pointer">
+            Is this truly free? What's the catch?
+            <svg class="chevron flex-shrink-0 text-[#5A6280]" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </summary>
+          <p class="mt-3 text-[#8B95B0] text-[14px] leading-[1.7]">
+            Yes — 100% free. Empowered is Trainocate's initiative to make quality AI education accessible across
+            Southeast Asia. No credit card, no trial period, no hidden fees. Register once and gain immediate,
+            unlimited access to all course content.
+          </p>
+        </details>
+
+        <details class="py-5 group">
+          <summary class="flex items-center justify-between gap-4 text-white font-semibold text-[15px] cursor-pointer">
+            Do I need a technical background to start?
+            <svg class="chevron flex-shrink-0 text-[#5A6280]" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </summary>
+          <p class="mt-3 text-[#8B95B0] text-[14px] leading-[1.7]">
+            Not at all. Most courses are designed for non-technical professionals — business leaders, managers,
+            knowledge workers, and everyday Microsoft 365 users. The AI Engineers track does assume some technical
+            familiarity, but all other courses start from the ground up.
+          </p>
+        </details>
+
+        <details class="py-5 group">
+          <summary class="flex items-center justify-between gap-4 text-white font-semibold text-[15px] cursor-pointer">
+            Which course should I start with?
+            <svg class="chevron flex-shrink-0 text-[#5A6280]" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </summary>
+          <p class="mt-3 text-[#8B95B0] text-[14px] leading-[1.7]">
+            If you use Microsoft 365 daily, start with "Mastering AI & Microsoft 365" — it's the most comprehensive
+            and practical. If you're in a leadership or strategy role, "AI for Business Leaders" is the sharper
+            fit. If you write a lot of prompts or want to get better at working with AI tools, go straight to
+            "Prompt Engineering for Executives & End Users."
+          </p>
+        </details>
+
+        <details class="py-5 group">
+          <summary class="flex items-center justify-between gap-4 text-white font-semibold text-[15px] cursor-pointer">
+            How much time will it take to complete all courses?
+            <svg class="chevron flex-shrink-0 text-[#5A6280]" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </summary>
+          <p class="mt-3 text-[#8B95B0] text-[14px] leading-[1.7]">
+            The full AI Skills library totals approximately 8.4 hours of video content. Because it's fully
+            on-demand, most learners complete it in one to two weeks by watching a couple of modules each day.
+            You can also pick just the courses most relevant to your role and skip the rest.
+          </p>
+        </details>
+
+        <details class="py-5 group">
+          <summary class="flex items-center justify-between gap-4 text-white font-semibold text-[15px] cursor-pointer">
+            Who is this platform designed for?
+            <svg class="chevron flex-shrink-0 text-[#5A6280]" width="18" height="18" fill="none" stroke="currentColor"
+              stroke-width="2" viewBox="0 0 24 24">
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </summary>
+          <p class="mt-3 text-[#8B95B0] text-[14px] leading-[1.7]">
+            Empowered is built for working professionals at every level — from executives and team leads to
+            individual contributors and engineers. If you want to build real, applicable AI skills without a
+            lengthy, costly training commitment, this is for you.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ═══════════════════════════════════════════════════════════
+     FINAL CTA
+═══════════════════════════════════════════════════════════ -->
+  <section class="py-24 px-6 bg-black border-t border-white/6 relative overflow-hidden">
+
+    <div class="max-w-2xl mx-auto text-center relative">
+      <div class="mb-10 flex justify-center items-center gap-3 w-full">
+        <img
+          src="https://marketing.trainocate.com/empowered/wp-content/uploads/sites/2/2026/01/Rev_Empowered-Logo-white-2048x948.png"
+          alt="Trainocate Empowered" class="h-16 md:h-24 object-contain mx-auto" />
+      </div>
+      <h2 class="text-white text-[34px] lg:text-[42px] font-extrabold leading-[1.1] tracking-[-1.4px] mb-5 mt-8">
+        Ready to build your AI skills?
+      </h2>
+      <p class="text-[#8B95B0] text-[17px] leading-[1.65] mb-10">
+        Join thousands of professionals gaining real AI expertise — free, on-demand, and at your own pace.
+        Register now and start your journey today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="https://marketing.trainocate.com/empowered/register/" target="_blank"
+          class="bg-[#FA4515] hover:bg-brand-dark text-white font-extrabold text-[15px] px-10 py-4 rounded-[10px] shadow-[0_8px_32px_rgba(250,69,21,0.35)] hover:shadow-[0_14px_40px_rgba(250,69,21,0.5)] transition-all uppercase tracking-wide">
+          Register Free & Start Now
+        </a>
+        <a href="#courses"
+          class="bg-white/6 hover:bg-white/10 border border-white/12 text-white font-semibold text-[15px] px-10 py-4 rounded-[10px] transition-all">
+          Explore the AI Pathway
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer Removed -->
+
+</body>
+
+</html>
